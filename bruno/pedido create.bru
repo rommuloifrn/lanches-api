@@ -1,0 +1,19 @@
+meta {
+  name: pedido create
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:8080
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "numero":1,
+    "cliente-id":1,
+    "status":"ENTREGUE"
+  }
+}

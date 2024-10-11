@@ -3,6 +3,8 @@ package com.romm.comidas.entities;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.hibernate.annotations.CurrentTimestamp;
+
 import com.romm.comidas.enums.StatusDoPedido;
 
 import jakarta.persistence.Entity;
@@ -29,6 +31,7 @@ public class Pedido {
     @ManyToMany @JoinTable(name = "composicao", joinColumns = @JoinColumn(name = "pedido_id"), inverseJoinColumns = @JoinColumn(name = "lanche_id"))
     private List<Lanche> lanches;
 
+    @CurrentTimestamp
     private LocalDateTime horario;
 
     @ManyToOne
