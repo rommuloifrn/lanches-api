@@ -22,4 +22,9 @@ public class Cliente {
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<Endereco> enderecos;
+
+    public Cliente(String nome, String numeroDeCelular) {
+        this.nome = nome;
+        this.numeroDeCelular = numeroDeCelular;
+    }
 }
