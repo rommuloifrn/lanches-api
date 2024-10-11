@@ -2,6 +2,7 @@ package com.romm.comidas.entities;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,7 +18,8 @@ public class Lanche {
 
     private String nome;
     private Float valor;
+    private boolean deletado;
 
-    @ManyToMany(mappedBy = "lanches")
+    @ManyToMany(mappedBy = "lanches", cascade = CascadeType.ALL)
     private List<Pedido> pedidos;
 }

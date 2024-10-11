@@ -1,0 +1,18 @@
+meta {
+  name: cliente create (cadastro)
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8080/cliente/cadastro
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "nome":"Debbie",
+    "numeroDeCelular":"84988978542"
+  }
+}

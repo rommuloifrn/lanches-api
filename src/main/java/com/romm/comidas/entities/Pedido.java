@@ -7,6 +7,7 @@ import org.hibernate.annotations.CurrentTimestamp;
 
 import com.romm.comidas.enums.StatusDoPedido;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,7 +26,7 @@ public class Pedido {
 
     private Integer numero;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Cliente cliente;
 
     @ManyToMany @JoinTable(name = "composicao", joinColumns = @JoinColumn(name = "pedido_id"), inverseJoinColumns = @JoinColumn(name = "lanche_id"))
@@ -34,7 +35,7 @@ public class Pedido {
     @CurrentTimestamp
     private LocalDateTime horario;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
 
     private StatusDoPedido status;
