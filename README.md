@@ -1,10 +1,15 @@
-# Comidas
+# Lanches
 
-cus:
+Casos principais inicialmente:
 
-- Adicionar lanche ao cardápio
-- Fazer pedido
+- [X] Adicionar lanche ao cardápio
+- [ ] Fazer pedido
+- [ ] Alterar estado do pedido
 
-penamentos:
+Depois:
+
+- [ ] Cadastro de cliente & implicações
+
+pensamentos:
 
 - lidar com promoções
