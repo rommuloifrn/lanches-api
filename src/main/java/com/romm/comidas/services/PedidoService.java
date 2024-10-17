@@ -28,6 +28,7 @@ public class PedidoService {
         var pedido = findOr404(IdDoPedido);
 
         pedido.setStatus(status);
+        pr.save(pedido);
     }
 
     public Pedido findOr404(Long id) {

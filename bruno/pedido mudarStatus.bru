@@ -1,0 +1,15 @@
+meta {
+  name: pedido mudarStatus
+  type: http
+  seq: 7
+}
+
+post {
+  url: http://localhost:8080/mudar-status/1
+  body: json
+  auth: none
+}
+
+body:json {
+  EM_PREPARO
+}
