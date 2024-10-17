@@ -2,6 +2,8 @@ package com.romm.comidas.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,6 +22,6 @@ public class Lanche {
     private Float valor;
     private boolean deletado;
 
-    @ManyToMany(mappedBy = "lanches", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "lanches", cascade = CascadeType.ALL) @JsonIgnore
     private List<Pedido> pedidos;
 }

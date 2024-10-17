@@ -4,7 +4,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import org.hibernate.annotations.CurrentTimestamp;
+import org.springframework.context.annotation.Lazy;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.romm.comidas.enums.StatusDoPedido;
 
 import jakarta.persistence.CascadeType;
@@ -26,7 +28,7 @@ public class Pedido {
 
     private Integer numero;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne()
     private Cliente cliente;
 
     @ManyToMany @JoinTable(name = "composicao", joinColumns = @JoinColumn(name = "pedido_id"), inverseJoinColumns = @JoinColumn(name = "lanche_id"))

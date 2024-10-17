@@ -26,7 +26,7 @@ public class PedidoController {
         return ps.findAll();
     }
 
-    @PostMapping()
+    @PostMapping(consumes = "application/json")
     public Pedido create(@RequestBody Pedido pedido) {
         return ps.create(pedido);
     }

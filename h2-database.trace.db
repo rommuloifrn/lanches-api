@@ -1,3 +1,0 @@
-2024-10-11 11:36:04.123623-03:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "LANCHE" not found (this database is empty); SQL statement:
-insert into lanche (deletado,nome,valor,id) values (?,?,?,default) [42104-224]
