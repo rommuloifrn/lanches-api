@@ -9,6 +9,8 @@ import com.romm.comidas.entities.Pedido;
 import com.romm.comidas.enums.StatusDoPedido;
 import com.romm.comidas.repository.PedidoRepository;
 
+import jakarta.persistence.EntityNotFoundException;
+
 @Service
 public class PedidoService {
     @Autowired PedidoRepository pr;
@@ -20,5 +22,18 @@ public class PedidoService {
     public Pedido create(Pedido pedido) {
         pedido.setStatus(StatusDoPedido.AGUARDANDO);
         return pr.save(pedido);
+    }
+
+    public void mudarStatus(StatusDoPedido status, Long IdDoPedido) {
+        var pedido = findOr404(IdDoPedido);
+
+        pedido.setStatus(status);
+    }
+
+    public Pedido findOr404(Long id) {
+        var opt = pr.findById(id);
+        if (opt.isEmpty()) throw new EntityNotFoundException("Deu bosta!");
+
+        return opt.get();
     }
 }
